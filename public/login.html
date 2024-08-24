@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Event Carbon Footprint Calculator</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        h1 {
+            margin: 0 0 1rem;
+            font-size: 2rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        form button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        .link {
+            display: block;
+            margin-top: 1rem;
+            color: #4caf50;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .link:hover {
+            color: #388e3c;
+        }
+
+        .character {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: bounce 5s ease-in-out infinite;
+        }
+
+        .character-1 {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .character-2 {
+            top: 25%;
+            right: 15%;
+            width: 40px;
+            height: 40px;
+            animation-delay: 2s;
+        }
+
+        .character-3 {
+            bottom: 20%;
+            left: 25%;
+            width: 50px;
+            height: 50px;
+            animation-delay: 4s;
+        }
+
+        .character-4 {
+            bottom: 10%;
+            right: 10%;
+            width: 45px;
+            height: 45px;
+            animation-delay: 6s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(45deg);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            form {
+                padding: 1rem;
+            }
+
+            form button {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .character {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--<?php include '../includes/header.php'; ?>-->
+    <div class="container">
+        <div class="character character-1"></div>
+        <div class="character character-2"></div>
+        <div class="character character-3"></div>
+        <div class="character character-4"></div>
+        <div class="content">
+            <h1>Login</h1>
+            <form action="login_process.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <a href="register.php" class="link">Don't have an account? Register</a>
+        </div>
+    </div>
+    <!--<?php include '../includes/footer.php'; ?>-->
+</body>
+</html>
