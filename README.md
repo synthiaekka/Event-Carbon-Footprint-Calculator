@@ -1,2 +1,2 @@
-# Event-Carbon-Footprint-Calculator
-Website to calculate event carbon footprint.
+# mvcat
+A lightweight MVC framework in PHP
