@@ -14,9 +14,9 @@
                 <h2>Sections</h2>
                 <ul>
                     <li><button onclick="showSection('home')">Home</button></li>
-                    <li><button onclick="showSection('section1')">Category 1</button></li>
-                    <li><button onclick="showSection('section2')">Category 2</button></li>
-                    <li><button onclick="showSection('section3')">Category 3</button></li>
+                    <li><button onclick="showSection('section1')">Cultural</button></li>
+                    <li><button onclick="showSection('section2')">Sports</button></li>
+                    <li><button onclick="showSection('section3')">Worksops</button></li>
                     <li><button onclick="showSection('result')">Results</button></li>
                 </ul>
             </div>
