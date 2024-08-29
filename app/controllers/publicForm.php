@@ -58,6 +58,9 @@ class publicForm extends Controller {
             'password' => $validated['password'],
             'usertype' => $validated['usertype'],
         ]);
+
+        // redirect to signin page
+        header('location: /signin');
     }
 
 
