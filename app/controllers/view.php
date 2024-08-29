@@ -19,4 +19,9 @@ class view extends Controller {
     public function signup () {
         $this->view('Register');
     }
+
+    // function to show the calculator page
+    public function calculator () {
+        $this->view('calculator');
+    }
 }

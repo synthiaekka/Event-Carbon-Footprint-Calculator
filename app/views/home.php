@@ -20,10 +20,10 @@
                 <a href="/Register" class="btn">Register</a>
 
                 <!-- show the calculator button only the user in signed in  -->
-                 @php $signedIn = (isset($_SESSION['email']))? 1: 0; @endphp
-                 @if( $signedIn )
-                    <a href="" class="btn">Calculator</a>
-                 @endif
+                @php $signedIn = (isset($_SESSION['email']))? 1: 0; @endphp
+                @if( $signedIn )
+                <a href="/calculator" class="btn">Calculator</a>
+                @endif
 
 
 

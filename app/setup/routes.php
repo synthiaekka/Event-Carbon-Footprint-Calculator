@@ -28,6 +28,7 @@ $routes = new Route;
 $routes->get('/', ['view', 'home'], '');
 $routes->get('/Register', ['view', 'signup'], '');
 $routes->get('/signin', ['view', 'signin'], '');
+$routes->get('/calculator', ['view', 'calculator'], '');
 
 
 
