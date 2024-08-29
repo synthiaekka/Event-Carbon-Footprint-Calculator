@@ -9,6 +9,7 @@ class publicForm extends Controller {
          * - validate csrf token
          * - validate the user inputs
          * - check password and repassword match
+         * - check if the email and contact already exists in the users list
          * - enter details of the user into database
          */
 
@@ -38,6 +39,8 @@ class publicForm extends Controller {
             header('location: /signup?error=The password and Repeat Passwords do not match');
             die;
         }
+
+        // check if the user email and contact number already exists in the database
 
         // enter details of the user into database
         $user = $this->model('users');
