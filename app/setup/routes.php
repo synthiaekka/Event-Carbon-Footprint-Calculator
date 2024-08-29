@@ -24,10 +24,16 @@ $routes = new Route;
  */
 
 
+// routes for public pages
 $routes->get('/', ['view', 'home'], '');
+$routes->get('/signup', ['view', 'signup'], '');
+$routes->get('/singnin', ['view', 'signin'], '');
 
 
 
+
+// post routes for public form actions
+$routes->post('/signup', ['publicForm', 'signup']);
 
 
 
