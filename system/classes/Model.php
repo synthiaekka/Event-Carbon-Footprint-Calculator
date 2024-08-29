@@ -42,6 +42,24 @@ class Model {
         }
     }
 
+    public function fetch_where($where_condition, $params = [], $type = PDO::FETCH_BOTH) {
+        $qry = "SELECT * FROM `$this->table` WHERE " . $where_condition;
+
+        $prepared = $this->con->prepare($qry);
+        if ($prepared->execute($params)) {
+            return $prepared->fetchAll($type);
+        } else return false;
+    }
+
+    public function delete_where($where_condition, $params = []) {
+        $qry = "DELETE FROM `$this->table` WHERE " . $where_condition;
+
+        $prepared = $this->con->prepare($qry);
+        if ($prepared->execute($params)) {
+            return true;
+        } else return false;
+    }
+
     // function to search one field with a condition
     public function fetch (string $field) {
         $this->obj = "SELECT `$field` FROM `$this->table` WHERE ";

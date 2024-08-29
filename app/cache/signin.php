@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="./css/signin.css">
 </head>
 <body>
-    <form action="/signin" method="POST">
-        <input type="email" placeholder="Enter your email" name="email">
-        <input type="password" placeholder="Enter your password" name="password">
+    <form action="">
+        <input type="email" placeholder="Enter your email">
+        <input type="password" placeholder="Enter your password">
         <input type="submit">
 
         <p>Don't have an account? <a href="/Register">Register</a></p>
