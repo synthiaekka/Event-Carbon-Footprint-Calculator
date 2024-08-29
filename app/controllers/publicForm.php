@@ -15,19 +15,19 @@ class publicForm extends Controller {
         // validate csrf token
 
         // validate the user inputs
-        if (!validateFullName($data['fullname'])) { // validate the fullname
+        if (!$this->validateFullName($data['fullname'])) { // validate the fullname
             header('location: /signup?error=Only letters and space allowed in fullname');
             die;
         }
-        if (!validateEmail($data['email'])) { // validate the email
+        if (!$this->validateEmail($data['email'])) { // validate the email
             header('location: /signup?error=Email in not in valid format');
             die;
         }
-        if (!validateContactNumber($data['contact'])) { // validaet the contact number
+        if (!$this->validateContactNumber($data['contact'])) { // validaet the contact number
             header('location: /signup?error=Only 10 digits are allowed in contact number');
             die;
         }
-        if (!validatePassword($data['password'])) { // validate the password
+        if (!$this->validatePassword($data['password'])) { // validate the password
             header('location: /signup?error=Password should have atleast one uppercase letter, atleast one lowercase letter, atleast one digit, atleast one special character, and should have minimun 8 character of length');
             die;
         }
