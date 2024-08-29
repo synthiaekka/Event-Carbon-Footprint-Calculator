@@ -17,7 +17,8 @@
             <p class="fade-in">Organize sustainable events by tracking and reducing your carbon footprint.</p>
             <div class="buttons">
                 <a href="/signin" class="btn">Signin</a>
-                <a href="/signup" class="btn">Signup</a>
+                <a href="/Register" class="btn">Register</a>
+                <a href="" class="btn">Calculator</a>
             </div>
         </div>
     </div>
