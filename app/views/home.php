@@ -18,6 +18,7 @@
             <div class="buttons">
                 <a href="/signin" class="btn">Signin</a>
                 <a href="/Register" class="btn">Register</a>
+                <a href="" class="btn">Calculator</a>
             </div>
         </div>
     </div>
