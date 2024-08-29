@@ -8,9 +8,14 @@
 </head>
 <body>
     <form action="/signup" method="POST">
-        <div class="error-message">
-            Please fill out all fields correctly.
-        </div>
+        @php $exists = (isset($_GET['error']))? 1: 0; @endphp
+        @if( $exists )
+            <div class="error-message">
+                {{ $_GET['error'] }}
+            </div>
+        @endif
+        
+        
 
         <input type="text" placeholder="Enter your full name" name="fullname">
         <input type="email" placeholder="Enter your email" name="email">

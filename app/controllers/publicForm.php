@@ -17,26 +17,26 @@ class publicForm extends Controller {
 
         // validate the user inputs
         if (!$this->validateFullName($data['fullname'])) { // validate the fullname
-            header('location: /signup?error=Only letters and space allowed in fullname');
+            header('location: /Register?error=Only letters and space allowed in fullname');
             die;
         }
         if (!$this->validateEmail($data['email'])) { // validate the email
-            header('location: /signup?error=Email in not in valid format');
+            header('location: /Register?error=Email in not in valid format');
             die;
         }
         if (!$this->validateContactNumber($data['contact'])) { // validaet the contact number
-            header('location: /signup?error=Only 10 digits are allowed in contact number');
+            header('location: /Register?error=Only 10 digits are allowed in contact number');
             die;
         }
         if (!$this->validatePassword($data['password'])) { // validate the password
-            header('location: /signup?error=Password should have atleast one uppercase letter, atleast one lowercase letter, atleast one digit, atleast one special character, and should have minimun 8 character of length');
+            header('location: /Register?error=Password should have atleast one uppercase letter, atleast one lowercase letter, atleast one digit, atleast one special character, and should have minimun 8 character of length');
             die;
         }
         $validated = $data; // the user inpus have been validated
 
         // check password and repassword match
         if ($validated['password'] !== $validated['repassword']) {
-            header('location: /signup?error=The password and Repeat Passwords do not match');
+            header('location: /Register?error=The password and Repeat Passwords do not match');
             die;
         }
 
@@ -46,7 +46,7 @@ class publicForm extends Controller {
 
         if (count($email) > 0) {
             // user email already exists
-            header('location: /signup?error=The user already exists');
+            header('location: /Register?error=The user already exists');
             die;
         }
 

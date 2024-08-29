@@ -18,7 +18,15 @@
             <div class="buttons">
                 <a href="/signin" class="btn">Signin</a>
                 <a href="/Register" class="btn">Register</a>
-                <a href="" class="btn">Calculator</a>
+
+                <!-- show the calculator button only the user in signed in  -->
+                 @php $signedIn = (isset($_SESSION['email']))? 1: 0; @endphp
+                 @if( $signedIn )
+                    <a href="" class="btn">Calculator</a>
+                 @endif
+
+
+
             </div>
         </div>
     </div>

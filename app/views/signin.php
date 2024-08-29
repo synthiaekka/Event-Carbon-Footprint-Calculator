@@ -8,6 +8,14 @@
 </head>
 <body>
     <form action="/signin" method="POST">
+
+        @php $exists = (isset($_GET['error']))? 1: 0; @endphp
+        @if( $exists )
+            <div class="error-message">
+                {{ $_GET['error'] }}
+            </div>
+        @endif
+    
         <input type="email" placeholder="Enter your email" name="email">
         <input type="password" placeholder="Enter your password" name="password">
         <input type="submit">
