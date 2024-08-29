@@ -22,6 +22,6 @@ class view extends Controller {
 
     // function to show the calculator page
     public function calculator () {
-        $this->view('calculator');
+        $this->view('events');
     }
 }
