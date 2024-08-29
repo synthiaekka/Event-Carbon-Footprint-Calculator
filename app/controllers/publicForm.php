@@ -41,9 +41,16 @@ class publicForm extends Controller {
         }
 
         // check if the user email and contact number already exists in the database
+        $user = $this->model('users');
+        $email = $user->fetch_where('email = ?', [$validated['email']]);
+
+        if (count($email) > 0) {
+            // user email already exists
+            header('location: /signup?error=The user already exists');
+            die;
+        }
 
         // enter details of the user into database
-        $user = $this->model('users');
         $user->insert([
             'fullname' => $validated['fullname'],
             'email' => $validated['email'],
@@ -51,6 +58,61 @@ class publicForm extends Controller {
             'password' => $validated['password'],
             'usertype' => $validated['usertype'],
         ]);
+    }
+
+
+    // function to signin  user
+    public function signin ($data) {
+         /**
+         * - validate csrf token
+         * - validate the user inputs
+         * - check if the email and contact already exists in the users list
+         * - start user sign in session
+         */ 
+
+        //  validate csrf token
+
+        // validate the user inputs
+        if (!$this->validateEmail($data['email'])) { // validate the email
+            header('location: /signin?error=Email in not in valid format');
+            die;
+        }
+        if (!$this->validatePassword($data['password'])) { // validate the password
+            header('location: /signin?error=Password is not in valid format');
+            die;
+        }
+        $validated = $data;
+
+        //  check if the user data already exists
+        $user = $this->model('users');
+        $email = $user->fetch_where('email = ?', [$validated['email']]);
+
+        if (count($email) == 0) {
+            // user not found
+            // return back to sign in page with errors
+            header('location: /signin?error="Incorrect User email"');
+
+            die;
+        }
+
+
+        // check if the password matches the actual password
+        if ($validated['password'] !== $email[0]['password']) {
+            // return back to sign in page with errors
+            header('location: /signin?error="Incorrect Password"');
+
+            die;
+        }
+
+        
+        
+        // user email already exists
+        $_SESSION['email'] = $email[0]['email'];
+        $_SESSION['id'] = $email[0]['id'];
+
+        // re direct to home page
+        header('location: /');
+        
     }
 
 
