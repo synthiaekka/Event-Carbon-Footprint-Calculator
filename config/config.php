@@ -8,7 +8,7 @@ define("HOST", "localhost");
 
 define("USER", "root"); //u727508198_Xoy75
 
-define("DATABASE", "dbm"); //u727508198_6qoJ5
+define("DATABASE", "carbon"); //u727508198_6qoJ5
 
 define("PASSWORD", ""); //ftp123F#
 
