@@ -16,8 +16,8 @@
             <h1 class="fade-in">Welcome to Event Carbon Footprint Calculator</h1>
             <p class="fade-in">Organize sustainable events by tracking and reducing your carbon footprint.</p>
             <div class="buttons">
-                <a href="signin.php" class="btn">Signin</a>
-                <a href="signup.php" class="btn">Signup</a>
+                <a href="/signin" class="btn">Signin</a>
+                <a href="/Register" class="btn">Register</a>
             </div>
         </div>
     </div>

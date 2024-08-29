@@ -17,6 +17,6 @@ class view extends Controller {
 
     // function to show the signup page
     public function signup () {
-        $this->view('signup');
+        $this->view('Register');
     }
 }
