@@ -9,12 +9,11 @@
 <body>
     <div class="container">
         <div class="content">
-            <h1>Choose event type!!! </h1>
+            <h1>Choose event !!! </h1>
             <div class="buttons">
                 @foreach( $event_cat as $cat )
-                    <a href="/sub-events?id={{ $cat['id'] }}" class="btn"> {{ $cat['name'] }} </a>
+                    <a href="/calc?id={{ $cat['id'] }}" class="btn"> {{ $cat['name'] }} </a>
                 @endforeach
-                
             </div>
         </div>
     </div>

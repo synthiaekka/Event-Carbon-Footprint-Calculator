@@ -29,6 +29,8 @@ $routes->get('/', ['view', 'home'], '');
 $routes->get('/Register', ['view', 'signup'], '');
 $routes->get('/signin', ['view', 'signin'], '');
 $routes->get('/calculator', ['view', 'calculator'], '');
+$routes->get('/sub-events', ['view', 'subevents'], '');
+$routes->get('/calc', ['view', 'calc'], '');
 
 
 

@@ -23,13 +23,15 @@ trait template{
         $content = preg_replace('/@while\(\s*(.+?)\s*\)/', '<?php while($1): ?>', $content);
         $content = str_replace('@endwhile', '<?php endwhile; ?>', $content);
 
+        // replacement for @foreach and @endforeach (loop)
+        $content = preg_replace('/@foreach\(\s*(.+?)\s*\)/', '<?php foreach($1): ?>', $content);
+        $content = str_replace('@endforeach', '<?php endforeach; ?>', $content);
+
         // replacement for @for and @endfor (loop)
         $content = preg_replace('/@for\(\s*(.+?)\s*\)/', '<?php for($1): ?>', $content);
         $content = str_replace('@endfor', '<?php endfor; ?>', $content);
 
-        // replacement for @foreach and @endforeach (loop)
-        $content = preg_replace('/@foreach\(\s*(.+?)\s*\)/', '<?php foreach($1): ?>', $content);
-        $content = str_replace('@endforeach', '<?php endforeach; ?>', $content);
+        
 
         // replacement for heredoc 
         $content = str_replace('@template', '<?php $str = <<<HTML', $content);

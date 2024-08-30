@@ -74,6 +74,7 @@ body {
 .quiz-content {
     width: 75%;
     padding: 1rem;
+    overflow-y: scroll;
 }
 
 /* Section Styling */
