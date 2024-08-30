@@ -45,7 +45,7 @@ class view extends Controller {
 
         $event_cat = $data['id'];
 
-        $all_event_categories = $eventCategories->fetch_where('event_group_id = ?', [$event_cat]);
+        $all_event_categories = $eventCategories->fetch_where('events_cat_id = ?', [$event_cat]);
 
         // echo "<pre>";
         // print_r($all_event_categories); die;

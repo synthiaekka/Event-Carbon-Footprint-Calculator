@@ -2,7 +2,7 @@
 
 class event_groups extends Model {
 
-    public $table = 'event_group';
+    public $table = 'events_cat';
 
     public $primary = 'id';
 }
